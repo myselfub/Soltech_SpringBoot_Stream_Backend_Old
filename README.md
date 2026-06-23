@@ -1,5 +1,5 @@
 # Soltech_SpringBoot_Stream_Backend_Old
-솔텍시스템-사내프로젝트 Stream Backend API Server, SringBoot
+솔텍시스템-사내프로젝트 (구)Stream Backend API Server, SringBoot
 
 Soltechsystem Stream
 Back : Spring Boot
