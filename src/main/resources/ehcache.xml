@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ehcache.org/v3" xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+	<!-- 캐시 생성 경로 -->
+	<!--<persistence directory="cache/data" />-->
+
+	<cache-template name="defaultTemplate">
+		<expiry>
+			<ttl unit="seconds">1800</ttl>
+		</expiry>
+		<resources>
+			<heap unit="entries">50</heap>
+		</resources>
+		<!-- 로그 -->
+		<!--
+		<listeners>
+			<listener>
+				<class>kr.co.soltech.stream.commons.configs.CacheLog</class>
+				<event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+				<event-ordering-mode>UNORDERED</event-ordering-mode>
+				<events-to-fire-on>CREATED</events-to-fire-on>
+				<events-to-fire-on>EVICTED</events-to-fire-on>
+				<events-to-fire-on>REMOVED</events-to-fire-on>
+				<events-to-fire-on>UPDATED</events-to-fire-on>
+				<events-to-fire-on>EXPIRED</events-to-fire-on>
+			</listener>
+		</listeners>
+		-->
+	</cache-template>
+
+	<cache-template name="defaultCntTemplate">
+		<expiry>
+			<ttl unit="seconds">3600</ttl>
+		</expiry>
+		<resources>
+			<heap unit="entries">50</heap>
+		</resources>
+		<!-- 로그 -->
+		<!--
+		<listeners>
+			<listener>
+				<class>kr.co.soltech.stream.commons.configs.CacheLog</class>
+				<event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+				<event-ordering-mode>UNORDERED</event-ordering-mode>
+				<events-to-fire-on>CREATED</events-to-fire-on>
+				<events-to-fire-on>EVICTED</events-to-fire-on>
+				<events-to-fire-on>REMOVED</events-to-fire-on>
+				<events-to-fire-on>UPDATED</events-to-fire-on>
+				<events-to-fire-on>EXPIRED</events-to-fire-on>
+			</listener>
+		</listeners>
+		-->
+	</cache-template>
+
+	<cache alias="userAuth">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.util.Map</value-type>
+		<expiry>
+			<ttl unit="seconds">600</ttl>
+		</expiry>
+		<resources>
+			<heap unit="entries">100</heap>
+		</resources>
+	</cache>
+
+	<cache alias="supportExtension" uses-template="defaultTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.util.List</value-type>
+	</cache>
+
+	<cache alias="atrzMapping" uses-template="defaultTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.util.Map</value-type>
+	</cache>
+
+	<cache alias="inqHldy" uses-template="defaultTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>org.springframework.data.domain.Page</value-type>
+	</cache>
+
+	<!-- 페이징 로우수 -->
+	<cache alias="atdcCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="atdcInfoCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="atrzCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="atrzCmptnCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="atrzUnCmptnCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="atrzFrmCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="atrzOpnnCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="authrtCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="cmmnCdCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="cmmnCdClsfCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="fileCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="hldyCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="menuCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="msgCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="schdlCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="userCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="vctnCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+
+	<cache alias="vctnInfoCnt" uses-template="defaultCntTemplate">
+		<key-type>java.lang.String</key-type>
+		<value-type>java.lang.Long</value-type>
+	</cache>
+</config>
